@@ -1,0 +1,179 @@
+/* @tailwind base; */
+/* @tailwind components; */
+@tailwind utilities;
+@import url("../app/../../node_modules/primereact/resources/themes/saga-blue/theme.css");
+
+.main-menu > .p-menubar > .p-menubar-root-list > .nav-items > .p-menuitem-content 
+> .p-menuitem-link > .p-menuitem-icon
+{
+  color: white;
+}
+
+.main-menu > .p-menubar > .p-menubar-root-list > .nav-items > .p-menuitem-content 
+> .p-menuitem-link > .p-menuitem-text
+{
+  color: white;
+}
+
+.main-invest-tab-view > .p-tabview-nav-container *
+{
+  background-color: #e0f2fe !important;
+  color: black !important;
+  text-align: center;
+}
+
+.admin-menu > .p-tabmenu > .p-tabmenu-nav > .p-tabmenuitem > .p-menuitem-link > .p-menuitem-icon 
+{
+  color: black;
+  font-size: 18px;
+}
+
+.admin-menu > .p-tabmenu > .p-tabmenu-nav > .p-tabmenuitem > .p-menuitem-link > .p-menuitem-text 
+{
+  color: black;
+  font-size: 18px;
+}
+
+.admin-menu > .p-tabmenu *
+{
+  background-color: #e0f2fe !important;
+}
+
+.admin-tab-view > .p-tabview-nav-container *
+{
+  background-color: #e0f2fe !important;
+  color: black !important;
+}
+
+.admin-tab-view > .p-tabview-nav-container *
+{
+  background-color: #e0f2fe !important;
+  color: black !important;
+}
+
+.p-tabview-panels
+{
+  background-color: #e0f2fe !important;
+} 
+
+.table-wrapper > .p-datatable-wrapper > .p-datatable-table > .p-datatable-thead * 
+{
+  background-color: #e0f2fe;
+}
+
+.table-wrapper > .p-datatable-wrapper > .p-datatable-table > .p-datatable-tbody *
+{
+  background-color: #e0f2fe;
+}
+
+.table-wrapper > .p-paginator
+{
+  background-color: #e0f2fe;
+}
+
+.update-apy-button 
+{
+  background-color: #1d4ed8 !important;
+  color: white !important
+}
+
+.update-apy-button  > .p-button-label
+{
+  background-color: transparent !important;
+}
+
+.set-apy-dialog
+{
+  border-radius: 25px;
+}
+
+.invest-button 
+{
+  background-color: #1d4ed8 !important;
+  color: white !important
+}
+
+.invest-button  > .p-button-label
+{
+  background-color: transparent !important;
+}
+
+.invest-dialog
+{
+  border-radius: 25px;
+}
+
+.claim-button 
+{
+  background-color: #1d4ed8 !important;
+  color: white !important
+}
+
+.claim-button  > .p-button-label
+{
+  background-color: transparent !important;
+}
+
+.claim-dialog
+{
+  border-radius: 25px;
+}
+
+.invest-data-scroller > .p-datascroller-header
+{
+  background-color: #e0f2fe;
+  color: black;
+}
+
+.invest-data-scroller > .p-datascroller-content
+{
+  background-color: #e0f2fe;
+  color: black;
+}
+
+.invest-data-scroller > .p-datascroller-content > .p-datascroller-list > li > div > div
+{
+  background-color: #bae6fd;
+}
+
+.invest-data-scroller > .p-datascroller-footer
+{
+  background-color: #e0f2fe;
+  color: black;
+}
+
+:root 
+{
+  --background: #dbeafe;
+  --foreground: #171717;
+}
+
+
+/* @media (min-width: 768px) and (max-width: 1200px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: 2fr 1fr !important;
+  }
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body 
+{
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities 
+{
+  .text-balance {
+    text-wrap: balance;
+  }
+}
