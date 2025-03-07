@@ -15,8 +15,9 @@ import { BlockUI } from 'primereact/blockui'
 import { DataScroller } from 'primereact/datascroller'
 import { ethers, getDefaultProvider } from 'ethers'
 import { MetamaskProvider, UseMetamask, StakingContractDetail, NotificationDetail } from '../../../context/MetamaskContext'
-import TokenABI from '../../../contracts/abi/token.json'
-import StakingABI from '../../../contracts/abi/tokenStaking.json'
+
+import TokenABI from '../../../contracts/abi/tcToken.json'
+import StakingABI from '../../../contracts/abi/savesStaking.json'
 
 const CustomTabMenu = () => {
     // State to track the active tab
@@ -409,39 +410,6 @@ const CustomTabMenu = () => {
 
     }
 
-    // const PAGE_SIZE = 5
-    // const [page, setPage] = useState(0)
-    // const [notification, setNotification] = useState<NotificationData[]>([])
-    // const [notificationLoading, setNotificationLoading] = useState(false)
-    // const [notificationAllLoaded, setNotificationAllLoaded] = useState(false)
-
-
-    // const LoadMore = () => 
-    // {
-    //     console.log(notificationData)
-    //     if (loading || notificationAllLoaded) return
-
-    //     setNotificationLoading(true)
-    //     setTimeout(() => {
-    //         const startIndex = page * PAGE_SIZE
-    //         const endIndex = startIndex + PAGE_SIZE
-    //         console.log(startIndex)
-    //         console.log(endIndex)
-    //         const newNotification = notificationData.slice(startIndex, endIndex)
-    //         console.log(newNotification)
-
-    //         if (newNotification.length < PAGE_SIZE) 
-    //         {
-    //             setNotificationAllLoaded(true) // Mark as fully loaded if no more items
-    //         }
-
-    //         setNotification((prevNotifications) => [...prevNotifications, ...newNotification])
-    //         setPage((prevPage) => prevPage + 1)
-    //         setNotificationLoading(false)
-            
-    //     }, 500) 
-    // }
-
     // Tab items
     const items = [
         { label: 'Dashboard', icon: 'pi pi-home'},
@@ -467,7 +435,7 @@ const CustomTabMenu = () => {
                     <div className="flex flex-col items-center lg:items-start gap-3 w-full">
                         <div className="flex flex-col gap-1">
                             <div className="text-2xl font-bold text-gray-900">
-                                Pool ID: {notificationDetail.poolID}
+                                Pool ID: {notificationDetail.poolId}
                             </div>
                             <div className="text-gray-700">Amount: {notificationDetail.amount} TCT</div>
                             <div className="text-gray-700">User: {notificationDetail.user}</div>

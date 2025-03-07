@@ -1,10 +1,9 @@
 "use client"
 import React, { createContext, useContext, useState, useEffect, useRef, ReactNode } from 'react'
 import { ethers } from 'ethers'
-import TokenABI from '../contracts/abi/token.json'
-// import TokenStakingABI from '../contracts/abi/tokenStaking.json'
-// const stakingContractAddress = "0xA14941948A27591A987f48fdC17f149a73B4496b"
-import StakingABI from '../contracts/abi/tokenStaking.json'
+
+import TokenABI from '../contracts/abi/tcToken.json'
+import StakingABI from '../contracts/abi/savesStaking.json'
 
 export interface StakePosition
 {
@@ -31,7 +30,7 @@ export interface StakingContractDetail
 
 export interface NotificationDetail
 {
-    poolID: number
+    poolId: number
     amount: number
     user: string
     typeOf: string
@@ -142,8 +141,11 @@ export const MetamaskProvider: React.FC<{ children: ReactNode }> = ({ children }
 
     const SetContractAddresses = () =>
     {
-        const tokenContractAddress = "0x924c1055469FD6F0C2Ca69A5089Cd1B0B1634d0b"
-        const stakingContractAddress = "0x36a393A27e761d4bf11B3A34b38d708bbf202499"
+        // const tokenContractAddress = "0x924c1055469FD6F0C2Ca69A5089Cd1B0B1634d0b"
+        // const stakingContractAddress = "0x36a393A27e761d4bf11B3A34b38d708bbf202499"
+
+        const tokenContractAddress = "0x379B1E1E5bB4B9a442A93A036b79D4031fF3f4A8"
+        const stakingContractAddress = "0xa0cCBF20557E4b56c38bf64960Ef849aCF32FdD9"
         setTokenContractAddress(tokenContractAddress)
         setStakingContractAddress(stakingContractAddress)
     }
@@ -338,15 +340,15 @@ export const MetamaskProvider: React.FC<{ children: ReactNode }> = ({ children }
                         for (let i = 0; i < notifications.length; i++) 
                         {
                             const notification = notifications[i]
-                            let {poolID, amount, user, typeOf, timestamp} = notification
+                            let {poolId, amount, user, typeOf, timestamp} = notification
 
-                            poolID = Number(poolID)
+                            poolId = Number(poolId)
                             amount = Number(ethers.formatUnits(amount, 18)).toFixed(4)
                             timestamp = (new Date(Number(timestamp) * 1000).toLocaleString())
 
                             data.push
                             ({
-                                poolID,
+                                poolId,
                                 amount,
                                 user,
                                 typeOf, 

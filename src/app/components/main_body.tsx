@@ -17,10 +17,11 @@ import { ProgressSpinner } from 'primereact/progressspinner'
 import { BlockUI } from 'primereact/blockui'
 import { DataView } from 'primereact/dataview'
 import { ConfirmPopup, confirmPopup } from 'primereact/confirmpopup'
-import TokenABI from '../../../contracts/abi/token.json'
-import StakingABI from '../../../contracts/abi/staking.json'
 import { ethers, getDefaultProvider } from 'ethers'
 import { MetamaskProvider, UseMetamask, StakePosition, StakingContractDetail} from '../../../context/MetamaskContext'
+
+import TokenABI from '../../../contracts/abi/tcToken.json'
+import StakingABI from '../../../contracts/abi/savesStaking.json'
 
 export default function Body() 
 {
@@ -509,7 +510,7 @@ export default function Body()
                     ></i></div>)}>
                     </Column>
 
-                    <Column field="poolID" header="POOL ID" style={{ width: '5%' }}></Column>
+                    <Column field="poolId" header="POOL ID" style={{ width: '5%' }}></Column>
 
                     <Column header="AMOUNT" style={{ width: '5%' }} body={(rowData, { rowIndex }) => (
                     <span>{rowData.amount} TCT</span>)}></Column>
